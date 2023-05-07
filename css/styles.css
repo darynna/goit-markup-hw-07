@@ -203,6 +203,11 @@ img {
     gap: 56px;
 }
 
+@media screen and (max-width: 380px){
+    .mobile-socials{
+    gap: 32px}
+}
+
 .nav-link{
 font-weight: 700;
 font-size: 36px;
@@ -282,6 +287,7 @@ line-height: 1.11;
     }
 }
 
+
 @media screen and (min-width: 768px){
 
 .nav-link::after {
@@ -299,10 +305,6 @@ line-height: 1.11;
 }
 }
 
-.nav-link.current {
-    color: var(--hoover-color);
-}
-
 .nav-link:hover,
 .nav-link:focus {
     color: var(--hoover-color);
@@ -314,7 +316,7 @@ line-height: 1.11;
 
 @media screen and (max-width: 767px){
     .address-list{
-        margin-top: 284px;
+        /* margin-top: 284px; */
     }
 }
 
@@ -326,11 +328,19 @@ line-height: 1.11;
     }
 }
 
+
+
 .phone-item{
+color: var(--accent-colour);
 margin-bottom: 40px;
 font-weight: 700;
 font-size: 36px;
 line-height: 1.11;
+}
+@media screen and (max-width: 380px){
+    .phone-item{
+        font-size: 28px;
+    }
 }
 
 .post-item{
@@ -367,6 +377,13 @@ line-height: 1.2;
     color: var(--hoover-color);
 }
 
+.menu-content{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /**
   |============================
@@ -623,7 +640,7 @@ line-height: 1.2;
     letter-spacing: 0.02em;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     .features-items-headline{text-align: center;
     }
     }
@@ -915,7 +932,7 @@ line-height: 1.2;
 
 .footer-text {
     color: var(--secondary-background-color);
-    width: 268px;
+    max-width: 268px;
     font-weight: 400;
 }
 
@@ -951,12 +968,10 @@ line-height: 1.2;
 .footer-description{
     align-items: flex-start;}
 .tablet-wrap {
-    /* margin-left: auto;
-    margin-right: auto; */
     display: flex;
     gap: 24px;
-    /* justify-content: center; */
 }}
+
 
 @media screen and (max-width: 1157px){
 .social-medea-box {
@@ -967,6 +982,12 @@ line-height: 1.2;
 }}
 
 @media screen and (min-width: 768px){
+    .social-medea-box{
+        align-items: flex-start;
+    } 
+}
+
+@media screen and (min-width: 1158px){
     .social-medea-box {
         margin-right: 80px;
     }
@@ -1152,6 +1173,13 @@ textarea {
     transition: opacity var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1), visibility var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (orientation: landscape) {
+    .backdrop{
+        overflow: auto;
+    }
+    
+}
+
 @madia screen and (orientation:lanscape){
     .backdrop{
         owerflow: auto;
@@ -1177,7 +1205,7 @@ textarea {
     transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1), 
     opacity var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 
-    width: 392px;
+    width: calc(100% - 30px);
     padding: 72px 16px 16px 16px ;
     min-height: 576px;
     opacity: 1;
@@ -1185,8 +1213,7 @@ textarea {
     background-color: var(--modal-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-
-
+    
 }
 
 @media screen and (min-width: 768px){
@@ -1231,7 +1258,7 @@ textarea {
 
 .modal-text{
 
-width: 360px;
+min-width: 320px;
 margin-bottom: 16px;
 
 text-align: center;
@@ -1244,6 +1271,7 @@ line-height: 24px;
 .main-form{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .form-element{
@@ -1429,8 +1457,8 @@ opacity: 1;
 
 
 .menu-toggle {
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 24px;
+    min-width: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1442,6 +1470,7 @@ opacity: 1;
     border: none;
     border-radius: 50%;
     outline: none;
+    
   }
   
   @media screen and (min-width: 768px) {
@@ -1469,11 +1498,6 @@ opacity: 1;
     transition: transform 250ms ease-in-out;
   }
 
-
-  @media screen and (min-width: 768px){
-  
-  }
-
   
   .menu-container.is-open {
     transform: translateX(0);
@@ -1481,22 +1505,28 @@ opacity: 1;
   
   .menu-container .menu-toggle {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 24px;
+    right: 24px;
+    display: flex;
     color: #fff;
+    border: 1px solid rgba(46,47,66, 0.1);
   }
   
   .mobile-menu {
     padding: 0;
+    padding-top: 40px;
     margin: 0;
     list-style: none;
   }
-  
+
+
   .mobile-menu .link {
     display: block;
     color: var(--title-text-colour);
     text-decoration: none;
   }
+  .nav-link.current {
+    color: var(--hoover-color);}
 
 
 
