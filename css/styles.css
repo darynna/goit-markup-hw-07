@@ -1648,7 +1648,7 @@ opacity: 1;
 
 @media screen and (max-width: 767px){
 .portfolio-items {
-    width: 396px;
+    max-width: 396px;
 }
 .portfolio-items:not(:last-child){
     margin-bottom: 48px;
